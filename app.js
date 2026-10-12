@@ -36,9 +36,7 @@ function sheetHTML(s,final){
   '</dl>'+
   '<p class="fix">Итоговая сумма фиксируется в договоре до выкупа.</p>';
 }
-var heroSheet=document.getElementById('heroSheet');
 var quizSheet=document.getElementById('quizSheet');
-function paintHero(){heroSheet.innerHTML='<div class="sheet">'+sheetHTML({country:'',type:'',budget:'',via:''},false)+'</div>';}
 function paintSheet(final){
   quizSheet.innerHTML='<div class="sheet pop">'+sheetHTML(state,final)+'</div>';
 }
@@ -84,7 +82,7 @@ function renderDone(){
     '<div class="q-done"><h3 id="q-title" tabindex="-1">Заявка принята</h3>'+
     '<p>Менеджер свяжется с вами в '+esc(state.via==='Звонок'?'ближайшее время':state.via)+' и пришлёт расчёт под ключ.</p>'+
     '<p>Это демо: форма пока не подключена, данные никуда не отправляются. В рабочей версии заявка уходит в Bitrix24 и в Telegram.</p>'+
-    '<button class="btn btn-line-light" type="button" data-again>Пройти заново</button></div>';
+    '<button class="btn btn-line" type="button" data-again>Пройти заново</button></div>';
 }
 
 function show(n,focus){
@@ -136,6 +134,5 @@ document.querySelectorAll('[data-soon]').forEach(function(a){
   });
 });
 
-paintHero();
 show(0,false);
 })();
